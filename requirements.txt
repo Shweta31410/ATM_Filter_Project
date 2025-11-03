@@ -1,0 +1,5 @@
+Flask>=2.0
+flask-socketio>=5.0
+eventlet
+chartjs   # not required on server; Chart.js used in browser via CDN
+matplotlib
