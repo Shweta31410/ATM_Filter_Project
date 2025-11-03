@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM Packet Filter Simulator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>ATM Packet Filtering Simulator</h1>
+        <p class="subtext">Filter and inspect packets in an ATM network</p>
+
+        <form action="/filter" method="POST">
+            <textarea name="packets" placeholder="Enter packets separated by commas (e.g., A1,B2,C3,D4,E5)" required></textarea>
+            <input type="text" name="blocked" placeholder="Enter blocked packets (e.g., B2,E5)" required />
+            <button type="submit">Filter Packets</button>
+        </form>
+
+        {% if filtered_packets is defined %}
+        <div class="result-box">
+            <h2>Filtered Packets</h2>
+            <p>{{ filtered_packets }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
